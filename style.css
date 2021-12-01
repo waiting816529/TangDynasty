@@ -4,9 +4,27 @@
 }
 @font-face {
   font-family: 莫大毛筆粗;
-  src: url("莫大毛筆粗.woff");
+  src: url("Bakudai-Medium.woff");
 }
 
+/* 網頁捲軸【寬度】
+::-webkit-scrollbar {
+    max-width: 10px;
+  }
+  網頁捲軸【背景】顏色 
+  ::-webkit-scrollbar-track {
+    background: #2D2924;
+  }
+  
+  網頁捲軸【把手】顏色 
+  ::-webkit-scrollbar-thumb {
+    background: #F4EADE;
+  }
+  
+   網頁捲軸【滑過時】把手的顏色 
+  ::-webkit-scrollbar-thumb:hover {
+    background: #fff;
+  } */
   
 *{
     margin:0;
@@ -262,7 +280,7 @@ section #btn:hover{
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: center;
-  height: 100vh;
+  height: 125vh;
   width: 100vw;
   align-items: center;
   z-index: 9;
