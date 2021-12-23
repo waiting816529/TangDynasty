@@ -1,0 +1,490 @@
+@font-face {
+  font-family: 莫大毛筆細;
+  src: url("Bakudai-Light.ttf");
+}
+@font-face {
+  font-family: 莫大毛筆粗;
+  src: url("Bakudai-Medium.woff");
+}
+/* 網頁捲軸【寬度】
+::-webkit-scrollbar {
+    max-width: 10px;
+  }
+  網頁捲軸【背景】顏色 
+  ::-webkit-scrollbar-track {
+    background: #2D2924;
+  }
+  
+  網頁捲軸【把手】顏色 
+  ::-webkit-scrollbar-thumb {
+    background: #F4EADE;
+  }
+  
+   網頁捲軸【滑過時】把手的顏色 
+  ::-webkit-scrollbar-thumb:hover {
+    background: #fff;
+  } */
+  
+*{
+    margin:0;
+    padding:0;
+    list-style:none;/* 移除項目符號 */
+    font-family: 莫大毛筆細;
+}
+html{
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
+body{
+    background-image:url("banner_background.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:cover;
+    max-width:100vw;
+    min-height: 90%;
+    overflow-x: hidden;
+    cursor: url("cursor.png"),auto;
+    scroll-behavior: smooth;
+    background-attachment:fixed;
+}
+a:hover{cursor:url("cursor1.png"),auto;}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.loading_wrapper {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0%;
+  left: 0%;
+  background-image:linear-gradient(#242E33,#444C4F);
+  opacity: 0.;
+  z-index: 998;
+  overflow: hidden;
+}
+
+.loading_deco {
+  bottom: 0%;
+  left: 0%;
+  background-image:("loading_deco.png");
+  z-index: 999;
+}
+
+.loading_content {
+  position: absolute;
+  display: flex;
+  width: 50vh;
+  height: 50vh;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.word_lo {
+  position: absolute;
+  font-size: 4vh;
+  top: 50%;
+  color:#F4EADE;
+  font-family: 莫大毛筆細;
+  transform: translate(-50%, -50%);
+}
+
+/* Tang */
+.word_lo.w1 {
+  left: 15%;
+}
+
+/* 花花 */
+.load {
+  position: absolute;
+  left: 24%;
+  top: 46%;
+  transform: translate(-50%, -50%);
+  animation: rotation 3s linear infinite;
+}
+
+/* Dynasty */
+.word_lo.w2 {
+  left: 48%;
+}
+
+/* . */
+.word_lo.w3 {
+  left: 68%;
+  top: 44%;
+  animation: bounce 1s linear infinite;
+}
+
+/* . */
+.word_lo.w4 {
+  left: 78%;
+  top: 44%;
+  animation: bounce 2s linear infinite;
+}
+
+/* . */
+.word_lo.w5 {
+  left: 88%;
+  top: 44%;
+  animation: bounce 3s linear infinite;
+}
+
+header{
+    position: fixed;/*固定頁首*/
+    display: flex;
+    align-items: center;
+    top: 2%;
+    left:2%;
+    z-index: 15;/*圖層在最前面*/
+    max-width: 95%;
+    min-width: 95%;
+    justify-content: space-between;
+    overflow: hidden;
+    float:none;
+}
+
+/* header.main-header{
+  padding: 5px 100px;
+  background: #000;
+} */
+
+/* header .logo{
+    top: 0;
+    left: 0;
+} */
+
+header .logo img{
+  width:200px;
+  vertical-align:middle;
+}
+header .main-nav{
+    font-size: 25px;
+    font-family: 莫大毛筆粗;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+header .main-nav a{
+    text-decoration:none;/* 移除超連結底線 */
+    font-family: 莫大毛筆粗;
+    color: #fff;
+    padding: 0.8em;
+    position: relative;
+    transform: translateY(0px);
+    transition: .3s;
+}
+header .main-nav a:hover{
+    transform: translateY(-5px);
+    color:  #FFDB99;;
+}
+header .main-nav a:after{
+    content: '';
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    bottom: -5px;
+    height: 0;
+    border-bottom: 1px solid #F4EADE;
+    transition: .3px;
+} /*出現一條槓槓*/
+
+header .main-nav a:hover:after{
+    left:0;
+    right:0;
+}
+
+section{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    padding: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+section img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: 100%;
+    min-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+section #btn{
+    position: absolute;
+    background:transparent;
+    width: 400px; 
+    border-width: 0px;
+    outline: none;
+    z-index: 7;
+    top:82%;
+    padding: 10px 20px;
+    vertical-align: middle;
+    transform:scale(0.9,0.9);
+    transition: all 0.3s ease-out;
+}
+
+section #btn:hover{
+    cursor:URL("cursor.png"),auto;
+    position: absolute;
+    width: 400px;
+    background:transparent;
+    border-width: 0px;
+    outline: none;
+    z-index: 7;
+    padding: 10px 20px;
+    vertical-align: middle;
+    transform:scale(1,1);
+}
+
+.container1 #bg{
+  z-index: 0;
+}
+.container1 #flower{
+  z-index: 1;
+  opacity: 0.4;
+}
+.container1 #star{
+  z-index: 1; 
+  animation: twinkling 1s linear 2s infinite alternate;
+  -moz-animation: twinkling 1s linear 2s infinite alternate;
+  -webkit-animation: twinkling 1s linear 2s infinite alternate;
+  -o-animation: twinkling 1s linear 2s infinite alternate;
+}
+
+.container1 #cloud{
+    z-index: 2;
+}
+/* .container1 #decoration{
+    z-index: 3;
+} */
+.container1 #title{
+    z-index: 4;
+}
+.container1 #rfa{
+    z-index: 5;
+}
+.container1 #lfa{
+    z-index: 3;
+}
+
+.container2{
+  background: linear-gradient(270deg, rgba(255, 255, 255, 0)0%, rgba(0, 0, 0, 0.6)26%);
+  background: -moz-linear-gradient(270deg, rgba(255, 255, 255, 0)0%, rgba(0, 0, 0, 0.6)26%);
+  background: -webkit-linear-gradient(270deg, rgba(255, 255, 255, 0)0%, rgba(0, 0, 0, 0.6)26%);
+  background: -o-linear-gradient(270deg, rgba(255, 255, 255, 0)0%, rgba(0, 0, 0, 0.6)26%);
+  position:relative;
+  overflow:hidden;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  height: 110vh;
+  width: 100vw;
+  align-items: center;
+  z-index: 9;
+}
+
+.container2 #bg_deco{
+  width:230;
+  position: absolute;
+  z-index: 10;
+  right: 0;
+  top:15%;
+  height: auto;
+}
+
+.container2 .section2{
+  display: flex;
+  position: absolute;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  align-items: center;
+  z-index: 9;
+}
+
+.container2 .section2 .frame{
+  position:relative;
+  max-width: 100%;
+  z-index: inherit;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  padding-left: 20px;
+}
+
+.container2 .section2 iframe{
+  z-index: inherit;
+  width:600px;
+  height:350px;
+  padding-left: 30px;
+  transform:scale(1,1);
+  transition: all 0.3s ease-out;
+}
+
+.container2 .section2 iframe:hover{
+  transform:scale(1.01,1.01);
+}
+
+.container2 .section2 .frame .introduction{
+  position:absolute; 
+  justify-content: center;
+  align-items: center;
+  color:#fff; 
+  font-weight:bold;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.container3{
+  background-color: rgba(0, 0, 0, .6);
+  position:relative;
+  overflow:hidden;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  height: 110vh;
+  width: 100vw;
+  align-items: center;
+  z-index: 9;
+}
+
+.container3 #intro_deco{
+  position: absolute;
+  z-index: 10;
+  left: 0;
+  top:15%;
+  height: auto;
+}
+
+.container3 .section3{
+  display: flex;
+  position: absolute;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  top:15%;
+  height: 100vh;
+  width: 100vw;
+  align-items: center;
+  z-index: 9;
+}
+
+.container3 .section3 img{
+  transform:scale(0.9,0.9);
+  transition: all 0.3s ease-out;
+}
+
+.container3 .section3 img:hover{
+  transform:scale(1,1);
+}
+
+.container4{
+  background-color: rgba(0, 0, 0, .6);
+  position:relative;
+  overflow:hidden;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  height: 110vh;
+  width: 100vw;
+  align-items: center;
+  z-index: 9;
+}
+
+.container4 #group_deco{
+  width:230;
+  position: absolute;
+  z-index: 10;
+  right: 0;
+  top:15%;
+  height: auto;
+}
+
+.section4{
+  position:relative;
+  overflow:hidden;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  top:8%;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  align-items: center;
+  z-index: 9;
+}
+
+.card1.active, .card2.active, .card3.active, .card4.active{
+  position: relative;
+  display: block;
+  height: 60%;
+  overflow: hidden;
+  border-radius: 10px;
+  transform:scale(0.8,0.8);
+  transition: all 0.3s ease-out;
+}
+
+.section4 img{
+  height: 65%;
+  width: 65%;
+  margin-left: 50px;
+  overflow: hidden;
+  transition: 0.3s;
+  align-items: center;
+}
+
+.card1:hover,.card2:hover,.card3:hover,.card4:hover
+{
+  transform:scale(0.95,0.95);
+}
+
+.container4 .card1 .waiting_content, 
+.container4 .card2 .jiayu_content, 
+.container4 .card3 .xioching_content, 
+.container4 .card4 .jingwen_content{
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+.container4 .card1 .waiting_name,
+.container4 .card2 .jiayu_name,
+.container4 .card3 .xioching_name,
+.container4 .card4 .jingwen_name{
+  font-size: 24px;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.6em;
+}
+
+.container4 .card1 .waiting_task,
+.container4 .card2 .jiayu_task,
+.container4 .card3 .xioching_task,
+.container4 .card4 .jingwen_task{
+  font-size: 18px;
+  color:#F4EADE;
+  line-height: 1.2em;
+  display: none;
+}
+
+footer{
+  background-color: rgba(0, 0, 0, .6);
+  color: #fff;
+  font-size:20px;
+  height: 10vh;
+  justify-content:center;
+  display: flex;
+}
