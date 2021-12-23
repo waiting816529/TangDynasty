@@ -1,5 +1,5 @@
-let cloud=document.getElementById('cloud');
-let decoration=document.getElementById('decoration');
+// let cloud=document.getElementById('cloud');
+// let decoration=document.getElementById('decoration');
 let title=document.getElementById('title');
 let rfa=document.getElementById('rfa');
 let lfa=document.getElementById('lfa');
@@ -8,10 +8,12 @@ let btn=document.getElementById('btn');
 let deco=document.getElementById('intro_deco');
 
 window.addEventListener('scroll',function(){
+    // var header=this.document.querySelector("header");
+    // header.classList.toggle("main-header", window.scrollY > 0);
     let value=window.scrollY;
     // flower.style.opacity=0.3;
-    cloud.style.top=value*-0.3+'px';
-    decoration.style.top=value*-0.1+'px';
+    // cloud.style.top=value*-0.3+'px';
+    // decoration.style.top=value*-0.1+'px';
     rfa.style.left=value*0.8+'px';
     lfa.style.left=value*-0.8+'px';
     title.style.top=value*-0.1+'px';

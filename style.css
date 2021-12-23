@@ -6,7 +6,6 @@
   font-family: 莫大毛筆粗;
   src: url("Bakudai-Medium.woff");
 }
-
 /* 網頁捲軸【寬度】
 ::-webkit-scrollbar {
     max-width: 10px;
@@ -43,7 +42,7 @@ html::-webkit-scrollbar {
 }
 
 body{
-    /* background-image:url("banner_background.png"); */
+    background-image:url("banner_background.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size:cover;
@@ -52,6 +51,7 @@ body{
     overflow-x: hidden;
     cursor: url("cursor.png"),auto;
     scroll-behavior: smooth;
+    background-attachment:fixed;
 }
 a:hover{cursor:url("cursor1.png"),auto;}
 
@@ -152,6 +152,11 @@ header{
     float:none;
 }
 
+/* header.main-header{
+  padding: 5px 100px;
+  background: #000;
+} */
+
 /* header .logo{
     top: 0;
     left: 0;
@@ -242,7 +247,6 @@ section #btn:hover{
     transform:scale(1,1);
 }
 
-
 .container1 #bg{
   z-index: 0;
 }
@@ -261,9 +265,9 @@ section #btn:hover{
 .container1 #cloud{
     z-index: 2;
 }
-.container1 #decoration{
+/* .container1 #decoration{
     z-index: 3;
-}
+} */
 .container1 #title{
     z-index: 4;
 }
@@ -271,16 +275,20 @@ section #btn:hover{
     z-index: 5;
 }
 .container1 #lfa{
-    z-index: 5;
+    z-index: 3;
 }
 
 .container2{
+  background: linear-gradient(270deg, rgba(255, 255, 255, 0)0%, rgba(0, 0, 0, 0.6)26%);
+  background: -moz-linear-gradient(270deg, rgba(255, 255, 255, 0)0%, rgba(0, 0, 0, 0.6)26%);
+  background: -webkit-linear-gradient(270deg, rgba(255, 255, 255, 0)0%, rgba(0, 0, 0, 0.6)26%);
+  background: -o-linear-gradient(270deg, rgba(255, 255, 255, 0)0%, rgba(0, 0, 0, 0.6)26%);
   position:relative;
   overflow:hidden;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: center;
-  height: 125vh;
+  height: 110vh;
   width: 100vw;
   align-items: center;
   z-index: 9;
@@ -341,12 +349,13 @@ section #btn:hover{
 }
 
 .container3{
+  background-color: rgba(0, 0, 0, .6);
   position:relative;
   overflow:hidden;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-around;
-  height: 100vh;
+  height: 110vh;
   width: 100vw;
   align-items: center;
   z-index: 9;
@@ -383,12 +392,13 @@ section #btn:hover{
 }
 
 .container4{
+  background-color: rgba(0, 0, 0, .6);
   position:relative;
   overflow:hidden;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-around;
-  height: 100vh;
+  height: 110vh;
   width: 100vw;
   align-items: center;
   z-index: 9;
@@ -428,8 +438,8 @@ section #btn:hover{
 }
 
 .section4 img{
-  height: 70%;
-  width: 70%;
+  height: 65%;
+  width: 65%;
   margin-left: 50px;
   overflow: hidden;
   transition: 0.3s;
@@ -441,7 +451,6 @@ section #btn:hover{
   transform:scale(0.95,0.95);
 }
 
-
 .container4 .card1 .waiting_content, 
 .container4 .card2 .jiayu_content, 
 .container4 .card3 .xioching_content, 
@@ -449,7 +458,6 @@ section #btn:hover{
   position: relative;
   text-align: center;
   width: 100%;
-  
 }
 
 .container4 .card1 .waiting_name,
@@ -458,7 +466,7 @@ section #btn:hover{
 .container4 .card4 .jingwen_name{
   font-size: 24px;
   font-weight: 600;
-  color: #2D2924;
+  color: #fff;
   line-height: 1.6em;
 }
 
@@ -467,8 +475,17 @@ section #btn:hover{
 .container4 .card3 .xioching_task,
 .container4 .card4 .jingwen_task{
   font-size: 18px;
-  color: #2D2924;
+  color:#F4EADE;
   line-height: 1.2em;
   display: none;
+}
+
+footer{
+  background-color: rgba(0, 0, 0, .6);
+  color: #fff;
+  font-size:20px;
+  height: 10vh;
+  justify-content:center;
+  display: flex;
 }
 
