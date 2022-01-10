@@ -1,21 +1,14 @@
-let cloud=document.getElementById('cloud');
-let decoration=document.getElementById('decoration');
 let title=document.getElementById('title');
 let rfa=document.getElementById('rfa');
 let lfa=document.getElementById('lfa');
 let btn=document.getElementById('btn');
-// let flower=document.getElementById('flower');
 let deco=document.getElementById('intro_deco');
 
 window.addEventListener('scroll',function(){
     let value=window.scrollY;
-    // flower.style.opacity=0.3;
-    cloud.style.top=value*-0.3+'px';
-    decoration.style.top=value*-0.1+'px';
     rfa.style.left=value*0.8+'px';
     lfa.style.left=value*-0.8+'px';
     title.style.top=value*-0.1+'px';
-    title.style.opacity=(0-scrolled) / 50;/*到底要怎樣才會變透明啦吼吼*/
 });
 
 window.onload = function() {
@@ -26,8 +19,7 @@ window.onload = function() {
     }
     window.scrollTo(0, -1);
     document.body.scrollTop = 0;
-}
-
+};
 
 $(window).on("load", function () {
     $(".loading_wrapper").fadeOut("slow");
