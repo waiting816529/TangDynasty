@@ -1,0 +1,352 @@
+@font-face {
+  font-family: "莫大毛筆細";
+  src: url("Bakudai-Light.woff");
+}
+@font-face {
+  font-family: "莫大毛筆粗";
+  src: url("Bakudai-Medium.woff");
+}
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body{
+  background-image:url("image/網頁背景短.png");
+  background-color:rgba(0,0,0,0.7);
+  background-blend-mode: multiply;
+  height:85vh;
+  width:100%;
+  cursor:url("image/cursor.png"),auto;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+header {
+  /* background-color:darkcyan; */
+  position: relative;
+}
+.logo a {
+  background-image: url("image/title.png");
+  background-repeat: no-repeat;
+  background-size:contain;
+  overflow: hidden;
+  text-indent: 101%;
+  white-space: nowrap;
+  display: block;
+  width: 210px;
+  height: 55px;
+  cursor: url("image/cursor1.png"),auto;
+}
+.hamburger {
+  /* background-color: #000000; */
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: block;
+}
+.hamburger-line {
+  width: 30px;
+  height: 3px;
+  background-color: #ffffff;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-shadow: 0px 10px 0px #ffffff, 0px -10px 0px #ffffff;
+}
+.menu {
+  /* background-color:yellowgreen; */
+  height: 100vh;
+  width: 80%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateX(-100%);
+  transition: 0.5s;
+  z-index: 100;
+}
+.menu li a {
+  display: block;
+  padding: 15px;
+  margin: 0px 20px 10px;
+  color: #ffffff;
+  font-family: "莫大毛筆粗";
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 20px;
+  text-align: center;
+  cursor:url("image/cursor1.png"),auto;
+  /* border-bottom: 3px solid #ffffff; */
+}
+#menu-switcher {
+  display: none;
+}
+#menu-switcher:checked ~ .menu {
+  transform: translateX(0%);
+}
+.menu li a:hover{
+  transform: translateY(-5px);
+  color:  #FFDB99;;
+}
+.menu li a:after{
+  content: '';
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  bottom: -5px;
+  height: 0;
+  border-bottom: 1px solid #F4EADE;
+  transition: .3px;
+} 
+.menu li a:hover:after{
+  left:0;
+  right:0;
+}
+@media screen and (min-width: 768px) {
+  .hamburger {
+    display: none;
+  }
+  header {
+    display: flex;
+    justify-content: space-between;
+  }
+  .menu {
+    transform: translateX(0%);
+    height: auto;
+    width: auto;
+    display: flex;
+    position: relative;
+    background-color: transparent;
+  }
+}
+
+/* --------------------------------------- */
+
+/* html, body {
+margin: 0px;
+padding: 0px;
+
+} */
+
+.carousel {
+position: relative;
+height:78vh;
+/* box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.64); */
+/* margin-top: 30px; */
+}
+
+.carousel-inner {
+/* background-color:gold; */
+position: relative;
+overflow: hidden;
+width: 75%;
+height:83vh;
+margin: 0 auto;
+}
+
+.carousel-open:checked + .carousel-item {
+position: static;
+opacity: 100;
+}
+
+.carousel-item {
+/* background-color:dodgerblue; */
+position: absolute;
+opacity: 0;
+-webkit-transition: opacity 0.6s ease-out;
+transition: opacity 0.6s ease-out;
+}
+
+img {
+display: block;
+height: auto;
+max-width: 100%;
+}
+
+#bo{
+  max-width:150px;
+}
+.carousel-control {
+background-position:center;
+background-size:contain;
+/* background: rgba(0, 0, 0, 0.28); */
+/* border-radius: 50%; */
+color: #fff;
+cursor: url("image/cursor1.png");
+display: none;
+font-size: 40px;
+height: 70px;
+line-height: 35px;
+position: absolute;
+top: 50%;
+-webkit-transform: translate(0, -50%);
+cursor: pointer;
+-ms-transform: translate(0, -50%);
+transform: translate(0, -50%);
+text-align: center;
+width: 70px;
+z-index: 10;
+}
+
+.carousel-control.prev {
+background-image:url("image/prev.png");
+cursor: url("image/cursor1.png");
+left: 0%;
+}
+
+.carousel-control.next {
+background-image:url("image/next.png");
+right: 0%;
+cursor: url("image/cursor1.png");
+}
+
+.carousel-control:hover {
+cursor: url("image/cursor1.png");
+}
+
+#carousel-1:checked ~ .control-1,
+#carousel-2:checked ~ .control-2,
+#carousel-3:checked ~ .control-3 {
+display: block;
+}
+
+/* .carousel-indicators {
+list-style: none;
+margin: 0;
+padding: 0;
+position: absolute;
+bottom: 2%;
+left: 0;
+right: 0;
+text-align: center;
+z-index: 10;
+}
+
+.carousel-indicators li {
+display: inline-block;
+margin: 0 5px;
+}
+
+.carousel-bullet {
+color: #fff;
+cursor: pointer;
+display: block;
+font-size: 35px;
+}
+
+.carousel-bullet:hover {
+color: #aaaaaa;
+}
+
+#carousel-1:checked ~ .control-1 ~ .carousel-indicators li:nth-child(1) .carousel-bullet,
+#carousel-2:checked ~ .control-2 ~ .carousel-indicators li:nth-child(2) .carousel-bullet,
+#carousel-3:checked ~ .control-3 ~ .carousel-indicators li:nth-child(3) .carousel-bullet {
+color: #428bca;
+}
+
+#title {
+width: 100%;
+position: absolute;
+padding: 0px;
+margin: 0px auto;
+text-align: center;
+font-size: 27px;
+color: rgba(255, 255, 255, 1);
+font-family: 'Open Sans', sans-serif;
+z-index: 9999;
+text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.33), -1px 0px 2px rgba(255, 255, 255, 0);
+} */
+
+
+/* ------------------------------- */
+main{
+  /* background-color:crimson; */
+}
+.peobg1{
+position:relative;
+background-image:url("image/狄仁傑背景.png");
+background-repeat: no-repeat;
+background-position:center;
+background-size: contain;
+/* width:600px;
+height:300px; */
+
+}
+.peobg2{
+background-image:url("image/武則天背景.png");
+background-repeat: no-repeat;
+background-position:center;
+background-size: contain;
+width:100%;
+}
+.peobg3{
+background-image:url("image/楊貴妃背景.png");
+background-repeat: no-repeat;
+background-position:center;
+background-size: contain;
+width:100%;
+}
+
+p{
+font-family: "莫大毛筆粗";
+line-height: 25px;
+font-size:18px;
+background-color:rgba(255,255,255,0.5);
+}
+
+.text_right{
+position:absolute;
+width:180%;
+left:100px;
+top:70px;
+text-align: left;
+}
+.text_left{
+position:absolute;
+width:200%;
+right:100px;
+top:20px;
+text-align: right;
+}
+
+.text_right2{
+position:absolute;
+width:150%;
+left:100px;
+top:60px;
+text-align: left;
+}
+.text_left2{
+position:absolute;
+width:180%;
+right:100px;
+top:50px;
+text-align: right;
+}
+.text_right3{
+position:absolute;
+width:200%;
+left:100px;
+top:60px;
+text-align: left;
+}
+.text_left3{
+position:absolute;
+width:160%;
+right:100px;
+top:50px;
+text-align: right;
+}
+/* .intro{
+
+background-color:darkslategrey;
+width:200px;
+height:200px;
+
+} */
+

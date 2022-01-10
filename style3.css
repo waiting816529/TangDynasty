@@ -1,0 +1,503 @@
+@font-face {
+  font-family: "莫大毛筆細";
+  src: url("Bakudai-Light.woff");
+}
+@font-face {
+  font-family: "莫大毛筆粗";
+  src: url("Bakudai-Medium.woff");
+}
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body{
+  background-image:url("image//網頁背景短.png");
+  background-color:rgba(0,0,0,0.7);
+background-blend-mode: multiply;
+  /* height:100%; */
+  width:100%;
+  cursor:url("image/cursor.png"),auto;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+header {
+  /* background-color:darkcyan; */
+  position: relative;
+}
+.logo a {
+  background-image: url("image/title.png");
+  background-repeat: no-repeat;
+  background-size:contain;
+  overflow: hidden;
+  text-indent: 101%;
+  white-space: nowrap;
+  display: block;
+  width: 210px;
+  height: 55px;
+  cursor: url("image/cursor1.png"),auto;
+}
+.hamburger {
+  /* background-color: #000000; */
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: block;
+}
+.hamburger-line {
+  width: 30px;
+  height: 3px;
+  background-color: #ffffff;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-shadow: 0px 10px 0px #ffffff, 0px -10px 0px #ffffff;
+}
+.menu {
+  /* background-color:yellowgreen; */
+  height: 100vh;
+  width: 80%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateX(-100%);
+  transition: 0.5s;
+  z-index: 100;
+}
+.menu li a {
+  display: block;
+  padding: 15px;
+  margin: 0px 20px 10px;
+  color: #ffffff;
+  font-family: "莫大毛筆粗";
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 20px;
+  text-align: center;
+  cursor:url("image/cursor1.png"),auto;
+  /* border-bottom: 3px solid #ffffff; */
+}
+#menu-switcher {
+  display: none;
+}
+#menu-switcher:checked ~ .menu {
+  transform: translateX(0%);
+}
+.menu li a:hover{
+  transform: translateY(-5px);
+  color:  #FFDB99;;
+}
+.menu li a:after{
+  content: '';
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  bottom: -5px;
+  height: 0;
+  border-bottom: 1px solid #F4EADE;
+  transition: .3px;
+} 
+.menu li a:hover:after{
+  left:0;
+  right:0;
+}
+@media screen and (min-width: 768px) {
+  .hamburger {
+    display: none;
+  }
+  header {
+    display: flex;
+    justify-content: space-between;
+  }
+  .menu {
+    transform: translateX(0%);
+    height: auto;
+    width: auto;
+    display: flex;
+    position: relative;
+    background-color: transparent;
+  }
+}
+
+/* ---------------------------------------------------------- */
+/* 內文 */
+main{
+  padding-top: 30px;
+}
+/* CSS */
+
+#tab {
+  max-height: 75vh;
+  width:100%;
+  /* background-color: red; */
+  /* border: solid 1px #1caa5d; */
+  /* background-image:url("image3/按鈕框.png");
+  background-repeat: no-repeat;
+  background-position:left;
+  background-size:80%; */
+  display:flex;
+}
+#ob{
+  width:80px;
+  height:125px;
+  /* background-color: black; */
+}
+/* 頁籤ul */
+#tab > ul {
+  /* overflow: hidden; */
+  margin: 0;
+  padding: 0 20px 0 20px;
+}
+
+#tab > ul > li {
+  list-style-type: none;
+  /* background-size:50%; */
+}
+
+/* 頁籤上的文字 */
+#tab > ul > li > a { 
+  text-decoration: none;
+  font-size: 15px;
+  color: green;
+/*     float: left; */
+  /* padding: 10px;
+  margin-top: 5px; */
+}
+#tab > ul > li > img { 
+background-size:50%;
+}
+
+/*頁籤div內容*/
+#tab > div {
+  clear: both;
+  padding: 5 0px;
+  width: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+/*第一筆的底色*/
+span:target ~ #tab > ul li:first-child a {
+  /* background-image: url("image3/文物按鈕按下.png"); */
+}
+
+span:target ~ #tab > div:first-of-type {
+  visibility: hidden;
+  width: 0;
+  padding: 15 0px;
+}
+
+/*頁籤變換&第一筆*/
+span ~ #tab > ul li:first-child a,
+#tab-1:target ~ #tab > ul li a[href$="#tab-1"],
+#tab-2:target ~ #tab > ul li a[href$="#tab-2"],
+#tab-3:target ~ #tab > ul li a[href$="#tab-3"],
+#tab-4:target ~ #tab > ul li a[href$="#tab-4"] {
+  /* background: yellow; */
+  border-radius: 5px 5px 0 0;
+}
+
+span ~ #tab > ul li:first-child a::before,
+#tab-1:target ~ #tab > ul li a[href$="#tab-1"]::before,
+#tab-2:target ~ #tab > ul li a[href$="#tab-2"]::before,
+#tab-3:target ~ #tab > ul li a[href$="#tab-3"]::before,
+#tab-4:target ~ #tab > ul li a[href$="#tab-4"]::before {
+  /* background-color: blue; */
+  height: 50%;
+}
+
+/*頁籤內容顯示&第一筆*/
+span ~ #tab > div:first-of-type,
+#tab-1:target ~ #tab > div.tab-content-1,
+#tab-2:target ~ #tab > div.tab-content-2,
+#tab-3:target ~ #tab > div.tab-content-3,
+#tab-4:target ~ #tab > div.tab-content-4 {
+  visibility: visible;
+  width: 100%;
+  /* height:100%; */
+  /* background-color:aqua; */
+  background-image:url("image3/底.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+span {
+  display: none;
+}
+
+/* ---------------------- */
+
+.picture{
+  /* background-color:coral; */
+  height:85%;
+  display:flex;
+  /* background-image:url("image3/底.png"); */
+}
+.foodpic{
+  width:100%;
+  height:50%;
+  /* background-color:darkslategrey; */
+  top:50%;
+  transform: translateY(30%);
+}
+.pic{
+  flex:4;
+  /* background-color:darkkhaki; */
+}
+.text{
+  flex:6;
+  /* background-color:darkorange; */
+}
+.txt{
+  width:80%;
+  height:60%;
+  margin:0 auto;
+  /* background-color:darkred; */
+  top:70%;
+  transform: translateY(35%);
+}
+.btns{
+  background-color:rgba(68, 65, 65,0.7);
+  /* border-top:px solid rgb(68, 65, 65); */
+  height:15%;
+}
+
+button{
+  position:relative;
+  width:70px;
+  height:70px;
+  margin:10px 0 0 20px;
+  left:5%;
+  border-style: none;
+  background-color:transparent;
+  background-repeat: no-repeat;
+  background-size:115%;
+  background-position: center;
+}
+
+/* -------------------食物 */
+#food{
+  width:350px;
+  height:300px;
+}
+#f1{
+  background-image:url("image3/食物/切膾亮.png");
+}
+#f2{
+  background-image:url("image3/食物/包子亮.png");
+}
+#f3{
+  background-image:url("image3/食物/水盆羊肉亮.png");
+}
+#f4{
+  background-image:url("image3/食物/烏梅漿亮.png");
+}
+#f5{
+  background-image:url("image3/食物/秋葵亮.png");
+}
+#f6{
+  background-image:url("image3/食物/洛陽水席亮.png");
+}
+h3{
+  font-family: "莫大毛筆粗";
+  font-size:44px;
+  color:white;
+}
+h2{
+  font-family: "莫大毛筆細";
+  font-size:26px;
+  line-height: 2;
+  color:white;
+}
+
+/* ----------------------------橋段 */ */
+#pg3 {
+  /* position:absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0; */
+  /* background-color:burlywood; */
+  margin:auto;
+  list-style:none;
+  width:1000%;
+  height:700px;
+  /* border-radius:3px; */
+  overflow:hidden;
+  /* box-shadow:1px 1px 3px 1px; */
+}
+
+
+#pg {
+  position:relative;
+  width:180px;
+  height:500px;
+  float:left;
+  /* border-left:1px solid white; */
+  -webkit-transition:all 0.7s;
+  -moz-transition:all 0.7s;
+  transition:all 0.7s;
+  /* box-shadow:-2px 0 10px 2px; */
+}
+
+#pg3 #pg:first-child {
+  border:none;
+}
+#pic3 {
+  width:100%;
+  height:100%;
+}
+
+#pg3:hover #pg {
+  width:100px;  
+}
+
+
+#pg3 #pg:hover {
+  width:480px;
+}
+
+/* ---------------------------文物 */
+.foodpic2{
+  width:100%;
+  height:30%;
+  /* background-color:darkslategrey; */
+  top:50%;
+  transform: translateY(30%);
+}
+#item{
+  width:300px;
+  height:350px;
+}
+  #i1{
+    background-image:url("image3/文物/唐三彩亮.png");
+  }
+  #i2{
+    background-image:url("image3/文物/白瓷亮.png");
+  }
+  #i3{
+    background-image:url("image3/文物/推背圖亮.png");
+  }
+  #i4{
+    background-image:url("image3/文物/晴雨珠亮.png");
+  }
+  #i5{
+    background-image:url("image3/文物/阿不扎匕首亮.png");
+  }
+  #i6{
+    background-image:url("image3/文物/觀音像亮.png");
+  }
+  #i7{
+    background-image:url("image3/文物/雙陸棋亮.png");
+  }
+  #i8{
+    background-image:url("image3/文物/洛陽宮燈亮.png");
+  }
+  #i9{
+    background-image:url("image3/文物/日曆亮.png");
+  }
+  #i10{
+    background-image:url("image3/文物/火藥亮.png");
+  }
+  #i11{
+    background-image:url("image3/文物/蹴鞠亮.png");
+  }
+  #i12{
+    background-image:url("image3/文物/大寫數字亮.png");
+  }
+
+  /* ------------------------彩蛋 */
+  .picture{
+     /* background-color:coral;  */
+    height:85%;
+    display:flex;
+  }
+  .prev_btn{
+    text-align: right;
+    position:relative;
+    flex:1;
+    height:100px;
+    /* background-color:aqua; */
+    top:50%;
+  }
+  .next_btn{
+    position:relative;
+    flex:1;
+    height:100px;
+    /* background-color:blue; */
+    top:50%;
+  }
+  #b_prev{
+    /* background-color:blueviolet; */
+    margin:0;
+    left:0%;
+    opacity:0;
+    background-image:url("image/prev.png");
+  }
+  #b_next{
+    /* background-color:brown; */
+    margin:0;
+    left:0%;
+    opacity: 0;
+    background-image:url("image/next.png");
+  }
+  #lock{
+    /* display:none; */
+    opacity:0;
+    margin:0 auto;
+  }
+  .password{
+    width:50%;
+    height:100%;
+    margin:0 auto;
+    position:relative;
+    /* background-color:coral; */
+    display:flex;
+  }
+  .enter{
+    position:relative;
+    flex:4;
+    /* background-color:cornflowerblue; */
+    background-image:url("image3/彩蛋/請輸入密碼.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  .ps{
+    position:relative;
+    flex:6;
+    /* background-color:darkgoldenrod; */
+  }
+  #b{
+    width:70%;
+    height:50px;
+    position:relative;
+    margin-top:17px;
+    background-color:rgb(216, 212, 212);
+    border:none;
+    /* transform: translateY(70%); */
+  }
+  input[type="submit"]{
+    width:100px;
+    height:45px;
+    background-color:transparent;
+    background-image:url("image3/彩蛋/OK.png");
+    background-size: contain;
+    background-position:center;
+    background-repeat: no-repeat;
+    border:none;
+    /* border:7px solid rgb(180, 178, 178);
+    background:rgb(68, 65, 65);
+    font-family: "莫大毛筆粗";*/
+    font-size: 0px; 
+    cursor:url("image/cursor1.png");
+    /* /* -webkit-border-radius: 5px;
+    border-radius: 5px;  */
+  } 
+
+
