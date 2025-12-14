@@ -18,3 +18,4 @@ jobs:
           publish_dir: ./
           user_name: 'Waiting'
           user_email: 'waiting816529@example.com'
+          # ensure workflow is at repo root for GitHub Pages
