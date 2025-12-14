@@ -1,0 +1,9 @@
+/.vscode/
+node_modules/
+dist/
+*.log
+*.pyc
+.DS_Store
+thumbs.db
+__pycache__/
+/.idea/
